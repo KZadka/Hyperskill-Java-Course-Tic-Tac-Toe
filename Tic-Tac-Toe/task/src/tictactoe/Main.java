@@ -10,6 +10,32 @@ public class Main {
         System.out.println("X X O");
 
         Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
 
+        lineOfDashes();
+        System.out.println(firstLine(userInput));
+        System.out.println(secondLine(userInput));
+        System.out.println(thirdLine(userInput));
+        lineOfDashes();
+
+
+    }
+    private static void lineOfDashes() {
+        System.out.println("---------");
+    }
+    private static String firstLine(String userInput){
+        String firstText = userInput.substring(0, 3);
+        String value = "| " + firstText.charAt(0) + " " + firstText.charAt(1) + " " + firstText.charAt(2)  + " |";
+        return value;
+    }
+    private static String secondLine(String userInput) {
+        String secondText = userInput.substring(3, 6);
+        String value ="| " + secondText.charAt(0) + " " + secondText.charAt(1) + " " + secondText.charAt(2)  + " |";
+        return value;
+    }
+    private static String thirdLine(String userInput) {
+        String thirdText = userInput.substring(6, 9);
+        String value ="| " + thirdText.charAt(0) + " " + thirdText.charAt(1) + " " + thirdText.charAt(2)  + " |";
+        return value;
     }
 }

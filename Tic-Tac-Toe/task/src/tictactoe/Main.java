@@ -25,17 +25,14 @@ public class Main {
     }
     private static String firstLine(String userInput){
         String firstText = userInput.substring(0, 3);
-        String value = "| " + firstText.charAt(0) + " " + firstText.charAt(1) + " " + firstText.charAt(2)  + " |";
-        return value;
+        return "| " + firstText.charAt(0) + " " + firstText.charAt(1) + " " + firstText.charAt(2)  + " |";
     }
     private static String secondLine(String userInput) {
         String secondText = userInput.substring(3, 6);
-        String value ="| " + secondText.charAt(0) + " " + secondText.charAt(1) + " " + secondText.charAt(2)  + " |";
-        return value;
+        return "| " + secondText.charAt(0) + " " + secondText.charAt(1) + " " + secondText.charAt(2)  + " |";
     }
     private static String thirdLine(String userInput) {
         String thirdText = userInput.substring(6, 9);
-        String value ="| " + thirdText.charAt(0) + " " + thirdText.charAt(1) + " " + thirdText.charAt(2)  + " |";
-        return value;
+        return "| " + thirdText.charAt(0) + " " + thirdText.charAt(1) + " " + thirdText.charAt(2)  + " |";
     }
 }

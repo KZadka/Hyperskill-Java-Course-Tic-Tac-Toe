@@ -4,21 +4,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // write your code here
-        System.out.println("X O X");
-        System.out.println("O X O");
-        System.out.println("X X O");
-
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
-
+        Character[][] field = new Character[3][3];
+        int counter = 0;
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[i].length; j++) {
+                field[i][j] = userInput.charAt(counter);
+                counter++;
+            }
+        }
         lineOfDashes();
         System.out.println(firstLine(userInput));
         System.out.println(secondLine(userInput));
         System.out.println(thirdLine(userInput));
         lineOfDashes();
-
-
     }
     private static void lineOfDashes() {
         System.out.println("---------");

@@ -21,13 +21,23 @@ public class Main {
         System.out.println(secondLine(userInput));
         System.out.println(thirdLine(userInput));
         lineOfDashes();
+
+        System.out.println("Enter the coordinates: ");
+        int usersXi = scanner.nextInt() - 1;
+        int usersXj = scanner.nextInt() - 1;
+
+        if (field[usersXi][usersXj] == '_') {
+            field[usersXi][usersXj] = 'X';
+            gameGrid(field);
+        }
+
+
         String result = "";
         boolean xWins = false;
         boolean oWins = false;
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
-               // int rows = field[0][j] + field[1][j] + field[2][j];
-               // int columns = field
+
                 if (field[0][0] + field[0][1] + field[0][2] == 264 ||//poziomy
                     field[1][0] + field[1][1] + field[1][2] == 264 ||//poziomy
                     field[2][0] + field[2][1] + field[2][2] == 264 ||//poziomy
@@ -107,6 +117,14 @@ public class Main {
             return true;
         } else {
             return false;
+        }
+    }
+    private static void gameGrid(Character[][] field) {
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[i].length; j++) {
+                System.out.print(field[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }

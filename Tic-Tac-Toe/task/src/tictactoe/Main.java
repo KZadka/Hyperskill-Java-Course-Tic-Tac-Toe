@@ -21,17 +21,32 @@ public class Main {
         System.out.println(secondLine(userInput));
         System.out.println(thirdLine(userInput));
         lineOfDashes();
+        int usersXi = 0;
+        int usersXj = 0;
+        while(true) {
+            System.out.println("Enter the coordinates: ");
+            String usersCoordinateI = scanner.next();
+            String usersCoordinateJ = scanner.next();
+            try {
+                usersXi = Integer.parseInt(usersCoordinateI) - 1;
+                usersXj = Integer.parseInt(usersCoordinateJ) - 1;
+            } catch (NumberFormatException nfe) {
+                System.out.println("You should enter numbers!");
+            }
 
-        System.out.println("Enter the coordinates: ");
-        int usersXi = scanner.nextInt() - 1;
-        int usersXj = scanner.nextInt() - 1;
 
-        if (field[usersXi][usersXj] == '_') {
-            field[usersXi][usersXj] = 'X';
-            gameGrid(field);
+            if (field[usersXi][usersXj] == '_') {
+                field[usersXi][usersXj] = 'X';
+                gameGrid(field);
+                break;
+            } else if (!(field[usersXi][usersXj] == '_')) {
+                System.out.println("This cell is occupied! Choose another one!");
+            } else if (usersXi >= 3 || usersXi <= 0 || usersXj >= 3 || usersXj <= 0) {
+                System.out.println("Coordinates should be from 1 to 3!");
+            }
         }
 
-
+/*
         String result = "";
         boolean xWins = false;
         boolean oWins = false;
@@ -72,7 +87,7 @@ public class Main {
             result = "Game not finished";
         }
         System.out.println(result);
-
+*/
 
     }
     private static void lineOfDashes() {

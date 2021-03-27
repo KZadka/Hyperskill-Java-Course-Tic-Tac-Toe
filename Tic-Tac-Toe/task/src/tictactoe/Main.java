@@ -35,14 +35,15 @@ public class Main {
             }
 
 
-            if (field[usersXi][usersXj] == '_') {
-                field[usersXi][usersXj] = 'X';
-                gameGrid(field);
-                break;
-            } else if (!(field[usersXi][usersXj] == '_')) {
-                System.out.println("This cell is occupied! Choose another one!");
-            } else if (usersXi >= 3 || usersXi <= 0 || usersXj >= 3 || usersXj <= 0) {
+            if (usersXi < 0 || usersXj >= 3 || usersXj < 0|| usersXi >= 3) {
                 System.out.println("Coordinates should be from 1 to 3!");
+
+            } else if (field[usersXi][usersXj] == '_') {
+                       field[usersXi][usersXj] = 'X';
+                       gameGrid(field);
+                       break;
+            } else if (!(field[usersXi][usersXj] == '_')) {
+                    System.out.println("This cell is occupied! Choose another one!");
             }
         }
 
@@ -135,12 +136,16 @@ public class Main {
         }
     }
     private static void gameGrid(Character[][] field) {
+        lineOfDashes();
         for (int i = 0; i < field.length; i++) {
+            System.out.print("| ");
             for (int j = 0; j < field[i].length; j++) {
                 System.out.print(field[i][j] + " ");
             }
+            System.out.print("|");
             System.out.println();
         }
+        lineOfDashes();
     }
 }
 
